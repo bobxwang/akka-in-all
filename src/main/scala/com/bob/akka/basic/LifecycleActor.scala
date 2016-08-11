@@ -4,7 +4,10 @@ import akka.actor.Actor
 
 case class ForceRestart(value: String)
 
-class BasicActor extends Actor {
+/**
+  * Actor lifecycle
+  */
+class LifecycleActor extends Actor {
 
   println("entered the Kenny constructor")
 

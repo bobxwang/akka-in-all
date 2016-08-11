@@ -22,8 +22,8 @@ class FlakyExpressionCalculator(val expr: Expression, val position: Position) ex
         context.parent ! Result(expr, result, position)
         context.stop(self)
       }
-    //    case Result(_, _, position) => throw new IllegalStateException(s"Expected results for positions ${expected.mkString(", ")} "
-    //      + s"but got position $position")
+    case Result(_, _, position) => throw new IllegalStateException(s"Expected results for positions ${expected.mkString(", ")} "
+      + s"but got position $position")
   }
 
   override def supervisorStrategy = OneForOneStrategy(loggingEnabled = false) {
